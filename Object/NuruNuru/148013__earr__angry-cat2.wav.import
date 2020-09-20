@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/148013__earr__angry-cat2.wav-29041046087be1af27f975722d83ade3.sample"
+
+[deps]
+
+source_file="res://Object/NuruNuru/148013__earr__angry-cat2.wav"
+dest_files=[ "res://.import/148013__earr__angry-cat2.wav-29041046087be1af27f975722d83ade3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

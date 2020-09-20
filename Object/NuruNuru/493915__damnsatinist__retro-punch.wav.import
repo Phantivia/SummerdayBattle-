@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/493915__damnsatinist__retro-punch.wav-e072557d68f54a0c694ff052c852ee08.sample"
+
+[deps]
+
+source_file="res://Object/NuruNuru/493915__damnsatinist__retro-punch.wav"
+dest_files=[ "res://.import/493915__damnsatinist__retro-punch.wav-e072557d68f54a0c694ff052c852ee08.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/371274__mafon2__water-click.wav-6f9d679b35a23c324b8062b7497c1467.sample"
+
+[deps]
+
+source_file="res://Object/tea_cup/371274__mafon2__water-click.wav"
+dest_files=[ "res://.import/371274__mafon2__water-click.wav-6f9d679b35a23c324b8062b7497c1467.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

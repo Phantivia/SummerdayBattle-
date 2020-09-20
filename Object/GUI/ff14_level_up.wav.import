@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ff14_level_up.wav-8abbde2c410ac9eb2ba7e1cfca05c475.sample"
+
+[deps]
+
+source_file="res://Object/GUI/ff14_level_up.wav"
+dest_files=[ "res://.import/ff14_level_up.wav-8abbde2c410ac9eb2ba7e1cfca05c475.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

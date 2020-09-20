@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Object/NuruNuru/life_bar.gd" type="Script" id=1]
+[ext_resource path="res://Object/Blue_Snow/pixel.png" type="Texture" id=2]
+
+
+[node name="life_bar" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="blank_bar" type="Sprite" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 15.7595, -168.12 )
+scale = Vector2( 310.362, 59.6193 )
+texture = ExtResource( 2 )
+
+[node name="red_bar" type="Sprite" parent="."]
+modulate = Color( 0.898039, 0, 0, 1 )
+position = Vector2( -134.09, -168.56 )
+scale = Vector2( 300, 50 )
+z_index = 1
+texture = ExtResource( 2 )
+offset = Vector2( 0.4995, 0.00880623 )

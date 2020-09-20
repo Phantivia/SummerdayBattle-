@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Object/NuruNuru/bullet/red_line.png" type="Texture" id=1]
+[ext_resource path="res://Object/NuruNuru/bullet/red_box.png" type="Texture" id=2]
+[ext_resource path="res://Object/NuruNuru/bullet/Red_hazard.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "execute"
+length = 5.0
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("rotate/box:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 4, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.643137 ), Color( 1, 0.309804, 0.309804, 0.388235 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 4.50098, 5.00184 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "execute"
+}, {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[node name="Red_hazard" type="Node2D"]
+position = Vector2( 0, 51.6721 )
+scale = Vector2( 2.2, 1.21 )
+z_index = -1
+script = ExtResource( 3 )
+
+[node name="rotate" type="Node2D" parent="."]
+
+[node name="box" type="Sprite" parent="rotate"]
+modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 2 )
+
+[node name="line" type="Sprite" parent="rotate/box"]
+texture = ExtResource( 1 )
+
+[node name="line2" type="Sprite" parent="rotate/box"]
+rotation = 1.5708
+texture = ExtResource( 1 )
+
+[node name="line3" type="Sprite" parent="rotate/box"]
+rotation = 3.14159
+texture = ExtResource( 1 )
+
+[node name="line4" type="Sprite" parent="rotate/box"]
+rotation = -1.5708
+texture = ExtResource( 1 )
+
+[node name="line5" type="Sprite" parent="rotate/box"]
+rotation = -0.785398
+texture = ExtResource( 1 )
+
+[node name="line6" type="Sprite" parent="rotate/box"]
+rotation = 0.785398
+texture = ExtResource( 1 )
+
+[node name="line7" type="Sprite" parent="rotate/box"]
+rotation = 2.35619
+texture = ExtResource( 1 )
+
+[node name="line8" type="Sprite" parent="rotate/box"]
+rotation = -2.35619
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="rotate"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="rotate/Area2D"]
+polygon = PoolVector2Array( -50, 10, -6000, 10, -6000, -10, -50, -10 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="rotate/Area2D"]
+rotation = 1.5708
+polygon = PoolVector2Array( -50, 10, -6000, 10, -6000, -10, -50, -10 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="rotate/Area2D"]
+rotation = -3.14159
+polygon = PoolVector2Array( -50, 10, -6000, 10, -6000, -10, -50, -10 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="rotate/Area2D"]
+rotation = -1.5708
+polygon = PoolVector2Array( -50, 10, -6000, 10, -6000, -10, -50, -10 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="rotate/Area2D"]
+rotation = -0.785398
+polygon = PoolVector2Array( -50, 10, -6000, 10, -6000, -10, -50, -10 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="rotate/Area2D"]
+rotation = 0.785398
+polygon = PoolVector2Array( -50, 10, -6000, 10, -6000, -10, -50, -10 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="rotate/Area2D"]
+rotation = 2.35619
+polygon = PoolVector2Array( -50, 10, -6000, 10, -6000, -10, -50, -10 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="rotate/Area2D"]
+rotation = -2.35619
+polygon = PoolVector2Array( -50, 10, -6000, 10, -6000, -10, -50, -10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "execute"
+anims/execute = SubResource( 1 )
+[connection signal="body_entered" from="rotate/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="rotate/Area2D" to="." method="_on_Area2D_body_exited"]

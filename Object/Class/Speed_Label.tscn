@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Object/coke_cup/Label.gd" type="Script" id=1]
+[ext_resource path="res://font/phantivia-font.tres" type="DynamicFont" id=2]
+
+[sub_resource type="Animation" id=4]
+resource_name = "shaking"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -50, 100 ), Vector2( 50, 100 ), Vector2( -50, 100 ) ]
+}
+
+[node name="Label" type="Label"]
+margin_left = 40.0
+margin_top = 100.0
+margin_right = 93.0
+margin_bottom = 128.0
+rect_scale = Vector2( 17.4713, 16.3238 )
+custom_fonts/font = ExtResource( 2 )
+text = "23123"
+percent_visible = 0.6
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shake" type="AnimationPlayer" parent="."]
+autoplay = "shaking"
+anims/shaking = SubResource( 4 )

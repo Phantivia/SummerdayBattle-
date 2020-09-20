@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/72191__snowflakes__whip03.wav-ed0a5d0276799367a6cdfca1e22cf052.sample"
+
+[deps]
+
+source_file="res://Object/Blue_Snow/72191__snowflakes__whip03.wav"
+dest_files=[ "res://.import/72191__snowflakes__whip03.wav-ed0a5d0276799367a6cdfca1e22cf052.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

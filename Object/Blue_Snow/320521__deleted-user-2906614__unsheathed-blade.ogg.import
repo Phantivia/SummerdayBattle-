@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/320521__deleted-user-2906614__unsheathed-blade.ogg-2691e77f418b0a57c187b37bc5fff666.oggstr"
+
+[deps]
+
+source_file="res://Object/Blue_Snow/320521__deleted-user-2906614__unsheathed-blade.ogg"
+dest_files=[ "res://.import/320521__deleted-user-2906614__unsheathed-blade.ogg-2691e77f418b0a57c187b37bc5fff666.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

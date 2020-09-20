@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Object/coke_cup/big_drop.png" type="Texture" id=1]
+[ext_resource path="res://Object/coke_cup/big_bullet.gd" type="Script" id=2]
+[ext_resource path="res://Object/coke_cup/Landing_smoke.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Object/coke_cup/495118__nebulasnails__wet-splat-1.wav" type="AudioStream" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "booom"
+length = 1.5
+tracks/0/type = "method"
+tracks/0/path = NodePath("Sprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Particles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+
+[node name="milk_bullet" type="KinematicBody2D"]
+scale = Vector2( 0.2, 0.2 )
+z_index = 1
+collision_mask = 2147483649
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 5.27785, -6.29489 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 1.05112, 22.0735 )
+scale = Vector2( 1.74428, 1.41859 )
+polygon = PoolVector2Array( 15.3301, -36.1011, 25.4437, -16.2485, 25.1556, 0.0372124, 15.1833, 23.5771, -14.4046, 23.4701, -24.725, 1.32006, -25.1242, -15.8739, -15.1979, -35.7265 )
+
+[node name="Particles2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.0821667, 0.0282516 )
+amount = 1000
+speed_scale = 3.0
+explosiveness = 0.95
+randomness = 1.0
+script = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/booom = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -8.0
+pitch_scale = 0.93
+max_distance = 700.0
+attenuation = 2.2974
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
